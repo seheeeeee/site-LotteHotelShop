@@ -1,0 +1,65 @@
+// 변수
+// colors
+$white: #fff;
+$black: #333;
+$sub-black: #666;
+$gold: #998465;
+
+//font
+$family: 'Noto Sans KR', sans-serif;
+
+//border
+$b-style: solid;
+$b-color: #dcdcdc;
+$border: 1px $b-style $b-color;
+
+//.logo mixin
+@mixin logo{
+    display: block;
+    width: 254px;
+}
+
+//prefix mixin
+@mixin prefix($width, $height, $position:absolute){
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    position: $position;
+    @content;
+}
+
+//footer mixin
+@mixin footerFont($size: 14px){
+    color: #999;
+    font: {
+        size: $size;
+        family: $family;
+    }
+}
+
+
+// 화면크기
+$mobile: 766px;
+$tablet: 1400px;
+$desktop: 1401px;
+
+//화면별 특이
+$pc_hidden: none !important;
+
+// 반응형
+@mixin mobile{
+    @media (max-width: $mobile){
+        @content;
+    }
+}
+@mixin tablet{
+    @media (min-width: $mobile + 1) and (max-width: $tablet){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width: $mobile + 1){
+        @content;
+    }
+}
