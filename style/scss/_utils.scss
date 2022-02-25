@@ -4,6 +4,7 @@ $white: #fff;
 $black: #333;
 $sub-black: #666;
 $gold: #998465;
+$bar-color: #999;
 
 //font
 $family: 'Noto Sans KR', sans-serif;
@@ -17,6 +18,15 @@ $border: 1px $b-style $b-color;
 @mixin logo{
     display: block;
     width: 254px;
+}
+
+//clear mixin
+@mixin clear {
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
 }
 
 //prefix mixin
@@ -36,6 +46,10 @@ $border: 1px $b-style $b-color;
         size: $size;
         family: $family;
     }
+}
+
+@mixin fontWeight($weight:400){
+    font-weight: $weight;
 }
 
 

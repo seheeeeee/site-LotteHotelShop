@@ -1,13 +1,17 @@
 @import 'utils';
 
+//default
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font: {
-        family: $family;
-    }
+    font-family: $family;
     color: $black;
+    letter-spacing: -0.05em;
+    @include fontWeight;
+}
+body{
+    overflow-x: hidden;
 }
 ul, li{
     list-style: none;
@@ -15,7 +19,29 @@ ul, li{
 a{
     text-decoration: none;
     color: $black;
-    font-weight: 400;
+    @include fontWeight;
+}
+input{
+    border: 0;
+    padding: 0 14px;
+    background-color: $white;
+    color: $black;
+    border-radius: 0;
+    vertical-align: top;
+    &::placeholder{
+        font : {
+            family: $family;
+            size: 16px;
+        }
+        color: $sub-black;
+        letter-spacing: -0.05em;
+    }
+}
+button{
+    border: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .pc_hidden{
@@ -23,8 +49,6 @@ a{
 }
 //wrap
 .wrap{
-    position: relative;
-    text-align: center;
     margin: 0 auto;
     @include desktop{
         max-width: 1680px;
@@ -39,12 +63,54 @@ a{
 }
 
 #header{
-    .top{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: $white;
+    .bottom{
         border-bottom: $border;
+    }
+    .top{
+        @extend .bottom;
         .wrap{
             height: 45px;
             padding: 5px 60px;
             transition: all 0.6s;
+            position: relative;
+
+            .util_menu{
+                position: absolute;
+                top: 10px;
+                right: 60px;
+                display: block;
+                ul{
+                    li{
+                        &::after{
+                            @include prefix(1px, 19px){
+                                background-color: #e0e0e0;
+                                top: 2px;
+                                right: 0;
+                            }
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                            padding-right: 0;
+                            &::after{ content: none;}
+                        }
+                        display: inline-block;
+                        position: relative;
+                        margin-right: 5px;
+                        padding-right: 8px;
+        
+                        a{
+                            color: $sub-black;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
         }
     }
     &.fixed{
@@ -63,33 +129,337 @@ a{
             }
         }
     }
-}
-.util_menu{
-    position: absolute;
-    top: 10px;
-    right: 60px;
-    display: block;
-    ul{
-        li{
-            &::after{
-                @include prefix(1px, 19px){
-                    background-color: #e0e0e0;
-                    top: 2px;
-                    right: 0;
+
+    .bottom{
+        @include clear;
+        .wrap{padding: 0 60px;}
+        .nm_logo{
+            display: inline-block;
+            margin-right: 5%;
+            vertical-align: middle;
+            @include fontWeight(600);
+            font: {
+                size: 20px;
+            }
+            a{
+                @include fontWeight(600);
+            }
+        }
+        .gnb_menu{
+            display: inline-block;
+            vertical-align: middle;
+            > ul{  
+                > li{
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 30px 15px;
+                    text-align: center;
+                    a{
+                        font-size: 18px;
+                    }
+                    .depth2{
+                        display: none;
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        top: 133px;
+                        padding: 30px 0 50px;
+                        background: $white;
+                        box-shadow: 0 10px 15px rgba(0,0,0,20%);
+                        .inner{
+                            @include desktop{
+                                max-width: 1400px;
+                                margin: 0 auto;
+                                // overflow: hidden;
+                            }
+                            @include clear;
+                            $tit-width: 260px;
+                            .tit{
+                                float: left;
+                                width: $tit-width;
+                                padding-left: 40px;
+                                font-size: 22px;
+                                span{
+                                    display: inline-block;
+                                    padding-right: 19px;
+                                    background: url('../../img/pc_ico_gnb_arrow.png') no-repeat 100% 60%;
+                                    background-size: 8px;
+                                }
+                            }
+                            > ul{
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-content: flex-start;
+                                padding: 0 40px;
+                                white-space: normal;
+                                width: calc(100% - $tit-width);
+                                height: 200px;
+                                border-left: $border;
+
+                                >li{
+                                    // display: inline-block;
+                                    width: 25%;
+                                    margin-bottom: 20px;
+                                    font-size: 18px;
+                                    a{
+                                        @include fontWeight(600);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .depth3{
+                        display: none;
+                        li {
+                            margin-top: 20px;
+                            a{
+                                color: $sub-black;
+                                @include fontWeight(600);
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        > a{ 
+                            text-decoration: underline;
+                            > span{
+                                @include fontWeight(500);
+                            }
+                        }
+                        .depth2, .depth3{
+                            display: block;
+                            a{
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        .depth3 a:hover{
+                            color: $gold;
+                        }
+                    }
                 }
             }
-            &:last-child::after{
-                content: none;
-            }
-            display: inline-block;
-            position: relative;
-            margin-right: 5px;
-            padding-right: 8px;
+        }
+        form#keyword{
+            float: right;
+            padding-top: 22px;
+            .top_srch_area{
+                width: 300px;
+                .srch_box{
+                    @include clear;
 
-            a{
-                color: $sub-black;
-                font-size: 14px;
+                    border: $border;
+                    $height: 38px;
+
+                    input[type="text"]{
+                        height: $height;
+                        line-height: $height;
+                        @include desktop{
+                            width: calc(100% - 62px);
+                        }
+                    }
+                    button{
+                        width: 62px;
+                        height: $height;
+                        background: url('../../img/pc_ico_srch.png') no-repeat 50%;
+                        background-size: 22px;
+                        font-size: 0;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }   
+}
+
+#contents{
+    @include desktop{
+        margin-top: 130px;
+    }
+    .content{
+        overflow: hidden;
+        width: 100%;
+        
+        .main_visual{
+            height: 800px;
+            position: relative;
+            .slider{
+                ul{
+                    li{
+                        width: 100%;
+                        position: absolute;
+                        
+                        picture, img{
+                            width: 100%;
+                            height: 800px;
+                        }
+                    }
+                }
+            }
+            .sliderCtrl{
+                @include desktop{
+                    width: 1400px;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 60px;
+                    z-index: 2;
+                    transform: translateX(-50%);
+                    text-align: right;
+                }
+                
+                ul{
+                    display: flex;
+                    justify-content: flex-end;
+
+                    li{
+                        width: 60px;
+                        height: 2px;
+                        line-height: 2px;
+                        background-color: $bar-color;
+                        transition: all 0.5s;
+
+                        &.on{
+                            background-color: $white;
+                        }
+                    }
+                }
+                button.stop{
+                    width: 12px;
+                    height: 16px;
+                    display: inline-block;
+                    position: absolute;
+                    right: -22px;
+                    bottom: -7px;
+                    background: url(../../img/ico_pause.png) no-repeat 50%;
+                    background-size: 100%;
+                }
+            }
+        }
+
+        .best_prd{
+            .wrap{
+                position: relative;
+                @include desktop{
+                    max-width: 1400px;
+                }
+
+                .m_tit{
+                    @include desktop{
+                        margin-top: 150px;
+                        margin-bottom: 50px;
+                        font-size: 40px;
+                    }
+                    margin-top: 90px;
+                    color: $gold;
+                }
+
+                ul{
+                    @include clear;
+
+                    li{
+                        @include desktop{
+                            float: left;
+                            width: 448px;
+                            margin-right: 25px;
+                            margin-bottom: 20px;
+                            &:not(:first-child){
+                                margin-top: 0;
+                            }
+                            &:nth-child(3n){
+                                margin-right: 0;
+                            }
+                        }
+                        line-height: 1.5;
+                        &:not(:first-child){
+                            margin-top: 28;
+                        }
+
+                        img{
+                            width: 100%;
+                        }
+                        .tit{
+                            margin-top: 24px;
+                            margin-bottom: 10px;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $sub-black;
+                            @include fontWeight(500);
+                        }
+                        .txt{
+                            font-size: 24px;
+                            color: $black;
+                            @include fontWeight(500);
+                            @include desktop{font-size: 22px}                            
+                        }
+                        .ico_arrow.beige{
+                            display: inline-block;
+                            margin-top: 30px;
+                            position: static;
+                            background: url('../../img/ico_arrow_beige.png') no-repeat 100% 50%;
+                            background-size: 5px;
+                            color: $gold;
+
+                            span{
+                                color: $gold;
+                                font-size: 16px;
+                            }
+                        }
+                        .ico_arrow{
+                            @include desktop{
+                                position: absolute;
+                                top: 7px;
+                                right: 0;
+                                padding-right: 12px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .e_shop_bn{
+            margin-top: 100px;
+            position: relative;
+            @include desktop{margin-top: 150px;}
+
+            img{
+                display: block;
+                width: 100%;
+            }
+            .bn_tb1{
+                width: 100%;
+                padding: 0 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                @include desktop{
+                    max-width: 1400px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+                p{
+                    line-height: 1.5;
+                    color: $white;
+                    em{
+                        margin-bottom: 15px;
+                        font-size: 21px;
+                        display: block;
+                        color: $white;
+                        font-style: normal;
+
+                        @include fontWeight(500);
+                        @include desktop{
+                            margin-bottom: 1.3%;
+                            font-size: 40px;
+                        }
+                    }
+                }
             }
         }
     }
 }
+ 
