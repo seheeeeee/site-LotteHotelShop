@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="/script/main.js" defer></script>
     <script src="/script/slider.js" defer></script>
     <title>LOTTE HOTEL e-SHOP</title>
 </head>
@@ -18,6 +19,7 @@
                     <picture>
                         <source srcset="img/pc_logo.png" media="(min-width: 767px)">
                         <source srcset="img/mb_logo.png" media="(max-width: 766px)">
+                        <img src="img/pc_logo.png" alt="LOTTE HOTEL e-SHOP 로고">
                     </picture>
                 </a>
                 <div class="util_menu">
@@ -240,20 +242,216 @@
                     <ul>
                         <li>
                             <img src="/img/hot_choice_1.png" alt="">
-                            
+                            <p class="tit">해온 프리미엄 베딩</p>
+                            <p class="txt">국내최고 롯데호텔에서만 느낄 수 있는<br>
+                            he:on Bedding Package를 집에서 편안하게 느껴보세요.</p>
+                            <a href="#" class="btn_view">자세히보기</a>
+                        </li>
+                        <li>
+                            <img src="/img/hot_choice_2.jpg" alt="">
+                            <p class="tit">시그니엘 드립백 커피</p>
+                            <p class="txt">시그니엘의 전문 바리스타가 직접 개발한<br>
+                            프리미엄 원두 세트로 하루를 향기롭게 시작해보세요.</p>
+                            <a href="#" class="btn_view">자세히보기</a>
                         </li>
                     </ul>
                 </div>
             </section>
         </div>
     </section>
-    <div class="quick"></div>
+    <div class="quick">
+        <button class="quick_btn">TOP</button>
+    </div>
     <footer id="footer">
         <div class="top">
-            <div class="wrap"></div>
+            <div class="wrap">
+                <ul>
+                    <li>(주)호텔 롯데</li>
+                    <li>주소: (04533) 서울특별시 중구 을지로 30</li>
+                    <li>대표이사: 안세진 / 사업자등록증: 104-81-25980</li>
+                    <li>통신판매신고번호: 2004-서울중구-2802호</li>
+                </ul>
+                <div class="right">
+                    <p class="cs">
+                        <span>LOTTE HOTEL e-SHOP 고객센터</span>
+                        <span>[전화번호] 02-759-7700</span>
+                        <span>[운영시간] 평일 09:00 ~ 18:00</span>
+                        <span>[점심시간] 평일 12:00 ~ 13:30</span>
+                        <span>*주말 및 공휴일은 1:1문의 게시판을 이용해 주세요</span>
+                    </p>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주하는 질문</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                        <li><a href="#">비회원 주문조회</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가임</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="bottom">
-            <div class="wrap"></div>
+            <div class="wrap">
+                <div class="left">
+                    <span><a href="#">개인정보처리방침</a></span>
+                    <span><a href="#">이용약관</a></span>
+                    <span><a href="#">리워즈 회원약관</a></span>
+                    <span><a href="#">이용안내</a></span>
+                </div>
+                <div class="right">
+                    <button class="toggleBtn">패밀리사이트</button>
+                    <ul class="toggleList">
+                        <li>
+                            <button type="button" onclick="window.open('http://www.lotte.co.kr/main.do');" class="js_change_btn">
+                                <span>롯데지주</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://www.lottecon.co.kr/');" class="js_change_btn">
+                                <span>롯데건설</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lotteglogis.com/');" class="js_change_btn">
+                                <span>롯데글로벌로지스</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://www.lottelem.co.kr/');" class="js_change_btn">
+                                <span>롯데기공</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lotterentacar.net/kor/main/index.do');" class="js_change_btn">
+                                <span>롯데렌탈</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://company.lottechilsung.co.kr/kor/main/index.do');" class="js_change_btn">
+                                <span>롯데칠성음료</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottecap.com/');" class="js_change_btn">
+                                <span>롯데캐피탈</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottechem.com/');" class="js_change_btn">
+                                <span>롯데케미칼</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('https://www.lottefoods.co.kr/ko/main');" class="js_change_btn">
+                                <span>롯데푸드</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://www.e-himart.co.kr/index.jsp');" class="js_change_btn">
+                                <span>롯데하이마트</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lecs.com/introduction/intro.show.lecs.brand.info.lecs');" class="js_change_btn">
+                                <span>롯데쇼핑 e커머스</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottehotel.com/global/ko.html');" class="js_change_btn">
+                                <span>롯데호텔</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('https://www.daehong.com/');" class="js_change_btn">
+                                <span>대홍기획</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.canon-bs.co.kr/main/');" class="js_change_btn">
+                                <span>캐논코리아비즈니스솔루션</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.7-eleven.co.kr/');" class="js_change_btn">
+                                <span>코리아세븐</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://company.fujifilm.co.kr/index.asp');" class="js_change_btn">
+                                <span>한국후지필름</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('https://www.lotteshopping.com/main/main?cstr=');" class="js_change_btn">
+                                <span>롯데백화점</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://company.lottemart.com/bc/main.do');" class="js_change_btn">
+                                <span>롯데마트</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lotteon.com/p/display/main/lottefresh?mall_no=5&amp;ch_no=100195&amp;ch_dtl_no=1000617');" class="js_change_btn">
+                                <span>롯데슈퍼</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://www.lottehomeshopping.com/user/main/index.lotte');" class="js_change_btn">
+                                <span>롯데홈쇼핑</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('https://www.lotteon.com/p/display/main/lottelohbs?mall_no=7&amp;ch_no=100195&amp;ch_dtl_no=1000617');" class="js_change_btn">
+                                <span>롯데롭스 </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://store-kr.uniqlo.com/display/displayShop.lecs?storeNo=83&amp;siteNo=50706&amp;displayNo=NQ1A13A07&amp;displayMallNo=NQ1&amp;stonType=P');" class="js_change_btn">
+                                <span>FRL코리아 </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottecm.com/ko/main.do');" class="js_change_btn">
+                                <span>롯데건설CM사업본부</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottemuseum.com/');" class="js_change_btn">
+                                <span>롯데뮤지엄</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('http://csv.lotte.co.kr/site/main/index.do');" class="js_change_btn">
+                                <span>롯데사회공언사이트</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottegrs.com/main.jsp');" class="js_change_btn">
+                                <span>롯데지알에스</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('http://www.lotteconcerthall.com/kor');" class="js_change_btn">
+                                <span>롯데콘서트홀</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" onclick="window.open('https://www.lottehotel.com/busan-hotel/ko.html');" class="js_change_btn">
+                                <span>부산롯데호텔</span>
+                            </button>
+                        </li>
+                         <li>
+                            <button type="button" onclick="window.open('https://kr.lottedfs.com/business/branch-korea/detail.do?detailsKey=5');" class="js_change_btn">
+                                <span>롯데면세점부산</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 </body>

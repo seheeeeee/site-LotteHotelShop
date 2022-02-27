@@ -51,7 +51,7 @@ button{
 .wrap{
     margin: 0 auto;
     @include desktop{
-        max-width: 1680px;
+        max-width: 1400px;
     }
     @include mobile{
         width: 100%;
@@ -69,6 +69,9 @@ button{
     z-index: 10;
     width: 100%;
     background-color: $white;
+    .wrap{
+        @include desktop{max-width: 1680px}
+    }
     .bottom{
         border-bottom: $border;
     }
@@ -79,7 +82,11 @@ button{
             padding: 5px 60px;
             transition: all 0.6s;
             position: relative;
-
+            
+            a.logo{
+                display: inline-block;
+                padding-top: 5px;
+            }
             .util_menu{
                 position: absolute;
                 top: 10px;
@@ -113,23 +120,6 @@ button{
             }
         }
     }
-    &.fixed{
-        .top{
-            border-bottom: none;
-            .wrap{
-                height: auto;
-                max-width: none;
-                padding: 0;
-                .logo{
-                    display: none;
-                }
-                .util_menu{
-                    display: none;
-                }
-            }
-        }
-    }
-
     .bottom{
         @include clear;
         .wrap{padding: 0 60px;}
@@ -271,6 +261,29 @@ button{
             }
         }
     }   
+    &.fixed{
+        .top{
+            border-bottom: none;
+            .wrap{
+                height: auto;
+                max-width: none;
+                padding: 0;
+                .logo{
+                    display: none;
+                }
+                .util_menu{
+                    display: none;
+                }
+            }
+        }
+        .bottom{
+            position: sticky;
+            top: 0;
+            .gnb_menu .depth2{
+                top: 87px;
+            }
+        }
+    }
 }
 
 #contents{
@@ -460,6 +473,244 @@ button{
                 }
             }
         }
+        .hot_choice{
+            .wrap{
+                .m_tit{
+                    @include desktop{
+                        margin-top: 150px;
+                    }
+                    margin-top: 90px;
+                    margin-bottom: 50px;
+                    font-size: 40px;
+                    color: $gold;
+                }
+                ul{
+                    li{
+                        @include clear;
+                        img{
+                            float: left;
+                        }
+                        text-align: center;
+                        &:last-child{ 
+                            margin-top: 100px;
+                            img{
+                                float: right;
+                            }            
+                        }       
+                        
+                        .tit{
+                            padding-top: 130px;
+                            font-size: 34px;
+                            color: $gold;
+                        }
+                        .txt{
+                            margin: 24px 0 58px;
+                            font-size: 18px;
+                        }
+                        a.btn_view{
+                            display: inline-block;
+                            width: 180px;
+                            height: 50px;
+                            line-height: 48px;
+                            color: $gold;
+                            text-align: center;
+                            border: 2px solid $gold;
+                            background: $white;
+                            transition: all 0.6s;
+
+                            &:hover{
+                                background: $gold;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
- 
+.quick{
+    position: fixed;
+    right: 20px;
+    bottom: 10%;
+    z-index: 550;
+
+    button{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        text-indent: -9999px;
+        overflow: hidden;
+        background: $sub-black url('../../img/mb_ico_top.png') no-repeat 50% 50%;
+        background-size: 14px;
+    }
+    @include desktop{
+        right: 60px;
+        
+        button{
+            width: 50px;
+            height: 50px;
+            background: $sub-black url('../../img/pc_ico_top.png') no-repeat 50% 50%;
+            background-size: 16px;
+        }
+    }
+}
+#footer{
+    background-color: #111;
+    padding: 30px 20px 40px;
+    margin-top: 110px;
+
+    @include footerFont;
+    @include desktop{
+        margin-top: 90px;
+        padding: 53px 60px 0;
+    }
+    a{
+        @include footerFont;
+    }
+    .top{
+        .wrap{
+            position: relative;
+            padding: 145px 0 54px;
+            background: url('../../img/pc_f_logo_wht.png') no-repeat 0 0;
+            background-size: 88px;
+
+            .right{
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                p{
+                    padding-right: 27px;
+                    span{
+                        display: block;
+                        line-height: 1.3;
+                        margin-top: 7px;
+                        @include footerFont;
+
+                        &:first-child{
+                            margin-top: 0;
+                        }
+                        &:last-child{
+                            margin-top: 14px;
+                        }
+                    }
+                }
+                ul{
+                    position: relative;
+                    width: 202px;
+                    padding: 0 27px;
+                    &:last-child{
+                        padding-right: 0;
+                        width: auto;
+                    }
+                    &::before{
+                        @include prefix(1px, 260px){
+                            background-color: $black;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                    li{
+                        margin-top: 14px;
+                        &:first-child{margin-top: 0;}
+                    }
+                }
+            }
+            > ul{
+                li{
+                    @include footerFont(15px);
+                    line-height: 27px;
+                }
+            }
+        }
+    }
+    .bottom{
+        border-top: 1px $b-style $black;
+
+        .wrap{
+            position: relative;
+            @include desktop{
+                padding: 36px 0;
+            }
+
+            .left{
+                span{
+                    display: block;
+                    position: relative;
+                    @include desktop{
+                        display: inline-block;
+                        margin: 0 10px 0 0;
+                        padding-right: 15px;
+                    }
+                    &:first-child a{color: $white;}
+                    &::after{
+                        @include prefix(1px, 12px){
+                            background-color: $black;
+                            top: 5px;
+                            right: 0;
+                        }
+                    }
+                    &:last-child::after{
+                        content: none;
+                    }
+                    a{
+                        @include footerFont(15px);
+                        font-weight: 700;
+                    }
+                }
+            }
+            .right{
+                position: absolute;
+                right: 0;
+                top: 28px;
+                > button{
+                    border: 1px $b-style $sub-black;
+                    color: $bar-color;
+                    padding: 0 14px;
+                    width: 260px;
+                    height: 40px;
+                    line-height: 38px;
+                    text-align: left;
+                    background: url('../../img/mb_ico_sel.png') no-repeat 100% 50%;
+                    background-size: 34px;
+                    font-size: 16px;
+                }
+                ul{
+                    &.on{
+                        display: block;
+                    }
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    bottom: 40px;
+                    width: 260px;
+                    height: auto;
+                    background-color: #111;
+                    border: 1px $b-style $sub-black;
+                    border-bottom: none;
+                    padding: 10px 0;
+
+                    li{
+                        button{
+                            display: block;
+                            width: 100%;
+                            margin-top: 20px;
+                            padding: 0 14px;
+                            text-align: left;
+                            
+                            span{
+                                @include footerFont(16px);
+                            }
+                        }
+                        &:first-child{
+                            button{
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

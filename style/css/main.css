@@ -53,7 +53,7 @@ button {
 }
 @media (min-width: 767px) {
   .wrap {
-    max-width: 1680px;
+    max-width: 1400px;
   }
 }
 @media (max-width: 766px) {
@@ -75,6 +75,11 @@ button {
   width: 100%;
   background-color: #fff;
 }
+@media (min-width: 767px) {
+  #header .wrap {
+    max-width: 1680px;
+  }
+}
 #header .bottom, #header .top {
   border-bottom: 1px solid #dcdcdc;
 }
@@ -83,6 +88,10 @@ button {
   padding: 5px 60px;
   transition: all 0.6s;
   position: relative;
+}
+#header .top .wrap a.logo {
+  display: inline-block;
+  padding-top: 5px;
 }
 #header .top .wrap .util_menu {
   position: absolute;
@@ -116,20 +125,6 @@ button {
 #header .top .wrap .util_menu ul li a {
   color: #666;
   font-size: 14px;
-}
-#header.fixed .top {
-  border-bottom: none;
-}
-#header.fixed .top .wrap {
-  height: auto;
-  max-width: none;
-  padding: 0;
-}
-#header.fixed .top .wrap .logo {
-  display: none;
-}
-#header.fixed .top .wrap .util_menu {
-  display: none;
 }
 #header .bottom::after, #header .top::after {
   content: "";
@@ -269,6 +264,27 @@ button {
   background-size: 22px;
   font-size: 0;
   float: right;
+}
+#header.fixed .top {
+  border-bottom: none;
+}
+#header.fixed .top .wrap {
+  height: auto;
+  max-width: none;
+  padding: 0;
+}
+#header.fixed .top .wrap .logo {
+  display: none;
+}
+#header.fixed .top .wrap .util_menu {
+  display: none;
+}
+#header.fixed .bottom, #header.fixed .top {
+  position: sticky;
+  top: 0;
+}
+#header.fixed .bottom .gnb_menu .depth2, #header.fixed .top .gnb_menu .depth2 {
+  top: 87px;
 }
 
 @media (min-width: 767px) {
@@ -458,6 +474,256 @@ button {
     margin-bottom: 1.3%;
     font-size: 40px;
   }
+}
+#contents .content .hot_choice .wrap .m_tit {
+  margin-top: 90px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  color: #998465;
+}
+@media (min-width: 767px) {
+  #contents .content .hot_choice .wrap .m_tit {
+    margin-top: 150px;
+  }
+}
+#contents .content .hot_choice .wrap ul li {
+  text-align: center;
+}
+#contents .content .hot_choice .wrap ul li::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#contents .content .hot_choice .wrap ul li img {
+  float: left;
+}
+#contents .content .hot_choice .wrap ul li:last-child {
+  margin-top: 100px;
+}
+#contents .content .hot_choice .wrap ul li:last-child img {
+  float: right;
+}
+#contents .content .hot_choice .wrap ul li .tit {
+  padding-top: 130px;
+  font-size: 34px;
+  color: #998465;
+}
+#contents .content .hot_choice .wrap ul li .txt {
+  margin: 24px 0 58px;
+  font-size: 18px;
+}
+#contents .content .hot_choice .wrap ul li a.btn_view {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  line-height: 48px;
+  color: #998465;
+  text-align: center;
+  border: 2px solid #998465;
+  background: #fff;
+  transition: all 0.6s;
+}
+#contents .content .hot_choice .wrap ul li a.btn_view:hover {
+  background: #998465;
+  color: #fff;
+}
+
+.quick {
+  position: fixed;
+  right: 20px;
+  bottom: 10%;
+  z-index: 550;
+}
+.quick button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: #666 url("../../img/mb_ico_top.png") no-repeat 50% 50%;
+  background-size: 14px;
+}
+@media (min-width: 767px) {
+  .quick {
+    right: 60px;
+  }
+  .quick button {
+    width: 50px;
+    height: 50px;
+    background: #666 url("../../img/pc_ico_top.png") no-repeat 50% 50%;
+    background-size: 16px;
+  }
+}
+
+#footer {
+  background-color: #111;
+  padding: 30px 20px 40px;
+  margin-top: 110px;
+  color: #999;
+  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+@media (min-width: 767px) {
+  #footer {
+    margin-top: 90px;
+    padding: 53px 60px 0;
+  }
+}
+#footer a {
+  color: #999;
+  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#footer .top .wrap {
+  position: relative;
+  padding: 145px 0 54px;
+  background: url("../../img/pc_f_logo_wht.png") no-repeat 0 0;
+  background-size: 88px;
+}
+#footer .top .wrap .right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+#footer .top .wrap .right p {
+  padding-right: 27px;
+}
+#footer .top .wrap .right p span {
+  display: block;
+  line-height: 1.3;
+  margin-top: 7px;
+  color: #999;
+  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#footer .top .wrap .right p span:first-child {
+  margin-top: 0;
+}
+#footer .top .wrap .right p span:last-child {
+  margin-top: 14px;
+}
+#footer .top .wrap .right ul {
+  position: relative;
+  width: 202px;
+  padding: 0 27px;
+}
+#footer .top .wrap .right ul:last-child {
+  padding-right: 0;
+  width: auto;
+}
+#footer .top .wrap .right ul::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 260px;
+  position: absolute;
+  background-color: #333;
+  left: 0;
+  top: 0;
+}
+#footer .top .wrap .right ul li {
+  margin-top: 14px;
+}
+#footer .top .wrap .right ul li:first-child {
+  margin-top: 0;
+}
+#footer .top .wrap > ul li {
+  color: #999;
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 27px;
+}
+#footer .bottom, #footer #header .top, #header #footer .top {
+  border-top: 1px solid #333;
+}
+#footer .bottom .wrap, #footer #header .top .wrap, #header #footer .top .wrap {
+  position: relative;
+}
+@media (min-width: 767px) {
+  #footer .bottom .wrap, #footer #header .top .wrap, #header #footer .top .wrap {
+    padding: 36px 0;
+  }
+}
+#footer .bottom .wrap .left span, #footer #header .top .wrap .left span, #header #footer .top .wrap .left span {
+  display: block;
+  position: relative;
+}
+@media (min-width: 767px) {
+  #footer .bottom .wrap .left span, #footer #header .top .wrap .left span, #header #footer .top .wrap .left span {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding-right: 15px;
+  }
+}
+#footer .bottom .wrap .left span:first-child a, #footer #header .top .wrap .left span:first-child a, #header #footer .top .wrap .left span:first-child a {
+  color: #fff;
+}
+#footer .bottom .wrap .left span::after, #footer #header .top .wrap .left span::after, #header #footer .top .wrap .left span::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12px;
+  position: absolute;
+  background-color: #333;
+  top: 5px;
+  right: 0;
+}
+#footer .bottom .wrap .left span:last-child::after, #footer #header .top .wrap .left span:last-child::after, #header #footer .top .wrap .left span:last-child::after {
+  content: none;
+}
+#footer .bottom .wrap .left span a, #footer #header .top .wrap .left span a, #header #footer .top .wrap .left span a {
+  color: #999;
+  font-size: 15px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+#footer .bottom .wrap .right, #footer #header .top .wrap .right, #header #footer .top .wrap .right {
+  position: absolute;
+  right: 0;
+  top: 28px;
+}
+#footer .bottom .wrap .right > button, #footer #header .top .wrap .right > button, #header #footer .top .wrap .right > button {
+  border: 1px solid #666;
+  color: #999;
+  padding: 0 14px;
+  width: 260px;
+  height: 40px;
+  line-height: 38px;
+  text-align: left;
+  background: url("../../img/mb_ico_sel.png") no-repeat 100% 50%;
+  background-size: 34px;
+  font-size: 16px;
+}
+#footer .bottom .wrap .right ul, #footer #header .top .wrap .right ul, #header #footer .top .wrap .right ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 260px;
+  height: auto;
+  background-color: #111;
+  border: 1px solid #666;
+  border-bottom: none;
+  padding: 10px 0;
+}
+#footer .bottom .wrap .right ul.on, #footer #header .top .wrap .right ul.on, #header #footer .top .wrap .right ul.on {
+  display: block;
+}
+#footer .bottom .wrap .right ul li button, #footer #header .top .wrap .right ul li button, #header #footer .top .wrap .right ul li button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 14px;
+  text-align: left;
+}
+#footer .bottom .wrap .right ul li button span, #footer #header .top .wrap .right ul li button span, #header #footer .top .wrap .right ul li button span {
+  color: #999;
+  font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#footer .bottom .wrap .right ul li:first-child button, #footer #header .top .wrap .right ul li:first-child button, #header #footer .top .wrap .right ul li:first-child button {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
