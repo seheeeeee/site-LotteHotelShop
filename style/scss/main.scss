@@ -72,11 +72,8 @@ button{
     .wrap{
         @include desktop{max-width: 1680px}
     }
-    .bottom{
-        border-bottom: $border;
-    }
     .top{
-        @extend .bottom;
+        border-bottom: $border;
         .wrap{
             height: 45px;
             padding: 5px 60px;
@@ -122,6 +119,7 @@ button{
     }
     .bottom{
         @include clear;
+        border-bottom: $border;
         .wrap{padding: 0 60px;}
         .nm_logo{
             display: inline-block;
@@ -134,11 +132,20 @@ button{
             a{
                 @include fontWeight(600);
             }
+            @include tablet{margin-right: 1%;}
+            @include m-tablet{
+                font-size: 20px;
+                position: relative;
+                top: 20px;
+            }
         }
         .gnb_menu{
             display: inline-block;
             vertical-align: middle;
+            
             > ul{  
+                @include tablet{margin: 0 -20px;}
+                @include m-tablet{margin: 0 -12px;}
                 > li{
                     display: inline-block;
                     vertical-align: top;
@@ -231,6 +238,37 @@ button{
                 }
             }
         }
+        .mb_srch_btn{
+            @include desktop{display: none;}
+            @include tablet{
+                display: block;
+                width: 62px;
+                height: 63px;
+                background: url('../../img/pc_ico_srch.png') no-repeat 50%;
+                background-size: 22px;
+                font-size: 0;
+                margin-top: 10px;
+                position: absolute;
+                top: 45px;
+                right: 40px;
+            }
+            @include m-tablet{
+                display: block;
+                width: 62px;
+                height: 63px;
+                background: url('../../img/pc_ico_srch.png') no-repeat 50%;
+                background-size: 22px;
+                font-size: 0;
+                margin-top: 10px;
+                position: absolute;
+                top: 45px;
+                right: 40px;
+            }
+            &.active{
+                background-size: 18px;
+                background-image: url('../../img/mb_ico_close.png');
+            }
+        }
         form#keyword{
             float: right;
             padding-top: 22px;
@@ -259,6 +297,36 @@ button{
                     }
                 }
             }
+            @include tablet {
+                display: none;
+                @include position(50%,133px);
+                padding: 64px 0;
+                background-color: #fff;
+
+                .top_srch_area{
+                    margin: 0 auto;
+                    width: 500px;
+                    
+                    .srch_box{
+                        width: 500px;
+                    }
+                }
+            }
+            @include m-tablet{
+                display: none;
+                @include position(50%,133px);
+                padding: 64px 0;
+                background-color: #fff;
+
+                .top_srch_area{
+                    margin: 0 auto;
+                    width: 500px;
+                    
+                    .srch_box{
+                        width: 500px;
+                    }
+                }
+            }
         }
     }   
     &.fixed{
@@ -279,8 +347,18 @@ button{
         .bottom{
             position: sticky;
             top: 0;
+            .nm_logo{
+                @include m-tablet{display: none;}
+            }
+            .mb_srch_btn{
+                top: 0px;
+                @include m-tablet{right: 15px;}
+            }
             .gnb_menu .depth2{
                 top: 87px;
+            }
+            form#keyword{
+                @include position(50%,87px);
             }
         }
     }
@@ -353,8 +431,10 @@ button{
         .best_prd{
             .wrap{
                 position: relative;
+                padding: 0 20px;
                 @include desktop{
-                    max-width: 1400px;
+                    width: 1400px;
+                    padding: 0;
                 }
 
                 .m_tit{
@@ -363,8 +443,10 @@ button{
                         margin-bottom: 50px;
                         font-size: 40px;
                     }
+                    margin-bottom: 20px;
                     margin-top: 90px;
                     color: $gold;
+                    font-size: 24px;
                 }
 
                 ul{
@@ -385,7 +467,7 @@ button{
                         }
                         line-height: 1.5;
                         &:not(:first-child){
-                            margin-top: 28;
+                            margin-top: 28px;
                         }
 
                         img{
@@ -398,12 +480,16 @@ button{
                             line-height: 24px;
                             color: $sub-black;
                             @include fontWeight(500);
+                            @include mobile{
+                                font-size: 12px;
+                                margin-bottom: 0;
+                            }
                         }
                         .txt{
-                            font-size: 24px;
+                            font-size: 21px;
                             color: $black;
                             @include fontWeight(500);
-                            @include desktop{font-size: 22px}                            
+                            @include desktop{font-size: 22px}                             
                         }
                         .ico_arrow.beige{
                             display: inline-block;
@@ -412,13 +498,6 @@ button{
                             background: url('../../img/ico_arrow_beige.png') no-repeat 100% 50%;
                             background-size: 5px;
                             color: $gold;
-
-                            span{
-                                color: $gold;
-                                font-size: 16px;
-                            }
-                        }
-                        .ico_arrow{
                             @include desktop{
                                 position: absolute;
                                 top: 7px;
@@ -426,9 +505,21 @@ button{
                                 padding-right: 12px;
                                 font-size: 16px;
                             }
+                            @include mobile{
+                                position: static;
+                                padding-right: 12px;
+                                margin-top: 10px;
+                            }
+
+                            span{
+                                color: $gold;
+                                font-size: 16px;
+                                @include mobile{font-size: 12px;}
+                            }
                         }
                     }
                 }
+                
             }
         }
 
@@ -443,20 +534,27 @@ button{
             }
             .bn_tb1{
                 width: 100%;
+                height: 100%;
+                z-index: 10;
                 padding: 0 20px;
                 position: absolute;
                 left: 0;
                 top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
                 @include desktop{
                     max-width: 1400px;
                     left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
+                    transform: translateX(-50%);
+                    display: table;
                 }
-
+                
                 p{
                     line-height: 1.5;
                     color: $white;
+                    @include desktop{display: table-cell; vertical-align: middle;}
                     em{
                         margin-bottom: 15px;
                         font-size: 21px;
@@ -472,30 +570,40 @@ button{
                     }
                 }
             }
+            
         }
         .hot_choice{
+            @include mobile{padding: 0 20px;}
             .wrap{
                 .m_tit{
                     @include desktop{
                         margin-top: 150px;
+                        margin-bottom: 50px;
+                        font-size: 40px;
                     }
+                    
+                    margin-bottom: 20px;
                     margin-top: 90px;
-                    margin-bottom: 50px;
-                    font-size: 40px;
                     color: $gold;
+                    font-size: 24px;
                 }
                 ul{
+                    width: 100%;
                     li{
                         @include clear;
                         img{
+                            display: block;
                             float: left;
+                            width: 804px;
+                            @include mobile{width: 100%; float: none;}
                         }
                         text-align: center;
                         &:last-child{ 
                             margin-top: 100px;
                             img{
                                 float: right;
-                            }            
+                                @include mobile{float: none;}   
+                            }
                         }       
                         
                         .tit{
@@ -511,7 +619,7 @@ button{
                             display: inline-block;
                             width: 180px;
                             height: 50px;
-                            line-height: 48px;
+                            line-height: 46px;
                             color: $gold;
                             text-align: center;
                             border: 2px solid $gold;
@@ -521,6 +629,25 @@ button{
                             &:hover{
                                 background: $gold;
                                 color: $white;
+                            }
+                        }
+                        @include mobile{
+                            .tit{
+                                margin-top: 30px;
+                                font-size: 21px;
+                                padding: 0;
+                            }
+                            .txt{
+                                margin: 10px 0 30px;
+                                font-size: 13px;
+                            }
+                            a.btn_view{
+                                width: 100%;
+                                background-color: $gold;
+                                border: 2px solid $gold;
+                                color: $white;
+                                transition: none;
+                                font-size: 13px;
                             }
                         }
                     }

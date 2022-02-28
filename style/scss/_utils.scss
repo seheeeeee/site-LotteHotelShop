@@ -56,6 +56,8 @@ $border: 1px $b-style $b-color;
 @mixin position($x: 0, $y: 0, $w: 100%) {
     position: absolute;
     width: $w;
+    left: $x;
+    top: $y;
 
     @if($x == 50% and $y == 50%){
         transform: translate(-50%, -50%);
@@ -68,6 +70,7 @@ $border: 1px $b-style $b-color;
 
 // 화면크기
 $mobile: 766px;
+$m-tablet: 1059px;
 $tablet: 1400px;
 $desktop: 1401px;
 
@@ -80,8 +83,13 @@ $pc_hidden: none !important;
         @content;
     }
 }
+@mixin m-tablet{
+    @media (min-width: $mobile + 1) and (max-width: $m-tablet){
+        @content;
+    }
+}
 @mixin tablet{
-    @media (min-width: $mobile + 1) and (max-width: $tablet){
+    @media (min-width: $m-tablet + 1) and (max-width: $tablet){
         @content;
     }
 }

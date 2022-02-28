@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
     <link rel="stylesheet" href="style/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="/script/main.js" defer></script>
@@ -118,6 +119,7 @@
                         </li>
                     </ul>
                 </div>
+                <button class="mb_srch_btn">Search</button>
                 <form action="" id="keyword" method="get">
                     <div class="top_srch_area">
                         <div class="srch_box">
@@ -227,7 +229,10 @@
             </section>
             <section class="hotel_prd"></section>
             <section class="e_shop_bn">
-                <img src="img/e_shop_bn.jpg" alt="">
+                <picture>
+                    <source srcset="img/mb_e_shop_bn.jpg" media="(max-width: 766px)">
+                    <img src="img/e_shop_bn.jpg" alt="">
+                </picture>
                 <div class="bn_tb1">
                     <p>
                         <em>LOTTE HOTEL e-SHOP</em>

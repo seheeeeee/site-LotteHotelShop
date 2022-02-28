@@ -25,3 +25,16 @@ let quickBtn = document.querySelector('.quick_btn');
 quickBtn.addEventListener('click',()=>{
     document.body.scrollIntoView({behavior: 'smooth'});
 })
+
+let mb_srch_btn = document.querySelector('.mb_srch_btn');
+mb_srch_btn.addEventListener('click',()=>{
+    let keyword_form = document.querySelector('#keyword');
+
+    if(mb_srch_btn.classList.contains('active')){
+        mb_srch_btn.classList.remove('active');
+        keyword_form.style.display = 'none';
+    }else{
+        mb_srch_btn.classList.add('active');
+        keyword_form.style.display = 'block';
+    }
+});
