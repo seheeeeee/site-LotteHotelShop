@@ -340,7 +340,7 @@ button {
   position: absolute;
   right: -22px;
   bottom: -7px;
-  background: url(../../img/ico_pause.png) no-repeat 50%;
+  background: url("../../img/ico_pause.png") no-repeat 50%;
   background-size: 100%;
 }
 #contents .content .best_prd .wrap {
