@@ -406,6 +406,13 @@ button {
   top: 87px;
   transform: translateX(-50%);
 }
+@media (min-width: 767px) {
+  #header.fixed .bottom form#keyword {
+    position: static;
+    transform: translateX(0);
+    width: 300px;
+  }
+}
 
 @media (min-width: 767px) {
   #contents {

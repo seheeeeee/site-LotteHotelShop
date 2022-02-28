@@ -361,6 +361,14 @@ button{
                 @include position(50%,87px);
             }
         }
+        @include desktop{
+            .bottom form#keyword{
+                position: static;
+                transform: translateX(0);
+                // float: right;
+                width: 300px;
+            }
+        }
     }
 }
 
