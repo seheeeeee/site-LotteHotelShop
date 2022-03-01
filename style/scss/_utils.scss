@@ -75,7 +75,7 @@ $tablet: 1400px;
 $desktop: 1401px;
 
 //화면별 특이
-$pc_hidden: none !important;
+$pc_hidden: none;
 
 // 반응형
 @mixin mobile{

@@ -38,3 +38,18 @@ mb_srch_btn.addEventListener('click',()=>{
         keyword_form.style.display = 'block';
     }
 });
+
+let btn_gnb = document.querySelector('button.btn_gnb');
+let mb_gnb = document.querySelector('.mb_gnb');
+btn_gnb.addEventListener('click',()=>{
+    if(mb_gnb.style.display == 'none'){
+        mb_gnb.style.cssText = 'display: block; left: 0;'
+    }else{
+        mb_gnb.style.cssText = 'display: none; left: -100%;'
+    }
+});
+
+let btn_close = document.querySelector('.mb_gnb .btn_close');
+btn_close.addEventListener('click',()=>{
+    mb_gnb.style.cssText = 'display: none; left: -100%;'
+});

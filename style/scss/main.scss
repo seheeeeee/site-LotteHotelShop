@@ -66,13 +66,15 @@ button{
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     width: 100%;
     background-color: $white;
+    .pc_hidden{display: none;}
     .wrap{
         @include desktop{max-width: 1680px}
     }
     .top{
+        @include mobile{display: none;}
         border-bottom: $border;
         .wrap{
             height: 45px;
@@ -82,7 +84,7 @@ button{
             
             a.logo{
                 display: inline-block;
-                padding-top: 5px;
+                // padding-top: 5px;
             }
             .util_menu{
                 position: absolute;
@@ -120,7 +122,22 @@ button{
     .bottom{
         @include clear;
         border-bottom: $border;
-        .wrap{padding: 0 60px;}
+        .wrap{
+            padding: 0 60px;
+            @include mobile{padding: 0;}
+        }
+        .home{
+            display: none;
+            @include mobile{
+                display: block;
+                @include position(20px, 19px, 22px);
+                height: 22px;
+                background: url('../../img/mb_ico_home.png') no-repeat 50%;
+                background-size: 100%;
+                text-indent: -9999px;
+                overflow: hidden;
+            }
+        }
         .nm_logo{
             display: inline-block;
             margin-right: 5%;
@@ -138,6 +155,219 @@ button{
                 position: relative;
                 top: 20px;
             }
+            @include mobile{
+                display: block;
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                padding: 16px 0;
+                border-bottom: $border;
+            }
+        }
+        .btn_gnb{
+            @include mobile{
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 23px;
+
+                span{
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+                    background: $black;
+                    margin-top: 4px;
+                    &:first-child{margin-top: 0;}
+                }
+            }
+        }
+        .mb_gnb{
+            @include desktop{
+                display: none;
+            }
+            @include mobile{
+                left: -100%;
+                display: none;
+                // display: block;
+                position: fixed;
+                // left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+                z-index: 110;
+
+                .wrap{
+                    position: relative;
+                    height: 100vh;
+                    padding: 76px 20px 20px;
+                    overflow-y: auto;
+
+                    .gnb_logo{
+                        position: absolute;
+                        top: 20px;
+                        width: 190px;
+                        img{
+                            max-width: 100%;
+                            border: 0;
+                            vertical-align: top;
+                        }
+                    }
+
+                    .btn_close{
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                        width: 18px;
+                        height: 18px;
+                        background: url('../../img/mb_ico_close.png')no-repeat 50%;
+                        background-size: 100%;
+                        text-indent: -9999px;
+                        overflow: hidden;
+                    }
+
+                    .g_top{
+                        p{
+                            font: {
+                                size: 21px;
+                                weight: 500;
+                            }
+                        }
+                        .btn_area{
+                            margin-top: 30px; 
+                            text-align: center;
+                            @include clear;
+
+                            .btn_txt{
+                                float: left;
+                                display: block;
+                                width: 49%;
+                                height: 50px;
+                                line-height: 46px;
+                                font-size: 13px;
+                                margin-right: 2%;
+                                background-color: $gold;
+                                color: #fff;
+
+                                &.btn_dgray{
+                                    background: $black;
+                                    border: 2px $b-style $black;
+                                }
+                                &:last-of-type{margin-right: 0;}
+                            }
+                        }
+
+                    }
+
+                    .g_menu{
+                        margin: 20px -20px 0;
+                        > li{
+                            > .btn_tg, a{
+                                display: block;
+                                width: 100%;
+                                height: 60px;
+                                line-height: 60px;
+                                padding: 0 20px;
+                                border-bottom: $border;
+                                font-size: 15px;
+                                text-align: left;
+
+                                span{
+                                    display: block;
+                                    position: relative;
+                                    &::after{
+                                     @include prefix(14px, 8px){
+                                        top: 50%;
+                                        right: 0;
+                                        background: url('../../img/ico_btn_arrow_gray_down.png') no-repeat 50%;
+                                        margin-top: -4px;
+                                     }   
+                                    }
+                                }
+                            }
+                            .depth2{
+                                display: none;
+                                padding: 20px 0;
+                                border-bottom: $border;
+
+                                > li{
+                                    padding: 0 20px;
+                                    color: $sub-black;
+                                }
+
+                                .depth3{
+                                    display: none;
+                                    padding: 5px 0 0 10px;
+
+                                    > li{
+                                        margin-top: 5px;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .b_menu{
+                        margin: 0 -20px;
+                        padding: 20px;
+                        background-color: #f4f4f4;
+
+                        ul{
+                            display: table;
+                            width: 100%;
+                            li{
+                                position: relative;
+                                display: table-cell;
+                                vertical-align: middle;
+                                width: 25%;
+                                text-align: center;
+
+                                &::after{
+                                    @include prefix(1px, 20px){
+                                        top: -2px;
+                                        right: 0;
+                                        background: $b-color;
+                                    }
+                                }
+                                &:last-of-type::after{content: none;}
+                            }
+                        }
+                    }
+
+                    .contact{
+                        padding-top: 25px;
+
+                        p{
+                            font-size: 13px;
+                            color: $sub-black;
+                            a{color: $gold;}
+                            &:last-of-type{margin-top: 5px;}
+                        }
+                        p.tit{
+                            margin-bottom: 5px;
+                            color: $black;
+                            font: {
+                                size: 15px;
+                                weight: 500;
+                            }
+                        }
+                        .btn_txt.btn_beige{
+                            margin-top: 18px;
+                            background: $gold;
+                            border: 2px $b-style $gold;
+                            color: #fff;
+                            display: block;
+                            width: 100%;
+                            height: 50px;
+                            line-height: 46px;
+                            font-size: 13px;
+                            text-align: center;
+                        }
+
+                    }
+                }
+            }
         }
         .gnb_menu{
             display: inline-block;
@@ -146,6 +376,7 @@ button{
             > ul{  
                 @include tablet{margin: 0 -20px;}
                 @include m-tablet{margin: 0 -12px;}
+                @include mobile{overflow-x: auto; white-space: nowrap;}
                 > li{
                     display: inline-block;
                     vertical-align: top;
@@ -153,6 +384,15 @@ button{
                     text-align: center;
                     a{
                         font-size: 18px;
+                    }
+                    @include mobile{
+                        margin: 0 14px;
+                        padding: 0;
+                        a{
+                            display: block;
+                            font-size: 15px;
+                            padding: 10px 0;
+                        }
                     }
                     .depth2{
                         display: none;
@@ -234,35 +474,42 @@ button{
                         .depth3 a:hover{
                             color: $gold;
                         }
+                        @include mobile{
+                            > a{ 
+                                text-decoration: none;
+                                cursor: pointer;
+                            }
+                            .depth2, .depth3{
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
         }
         .mb_srch_btn{
+            width: 62px;
+            height: 63px;
+            background: url('../../img/pc_ico_srch.png') no-repeat 50%;
+            background-size: 22px;
+            font-size: 0;
+            margin-top: 10px;
+            position: absolute;
+            top: 45px;
+            right: 40px;
             @include desktop{display: none;}
             @include tablet{
                 display: block;
-                width: 62px;
-                height: 63px;
-                background: url('../../img/pc_ico_srch.png') no-repeat 50%;
-                background-size: 22px;
-                font-size: 0;
-                margin-top: 10px;
-                position: absolute;
-                top: 45px;
-                right: 40px;
             }
             @include m-tablet{
                 display: block;
-                width: 62px;
-                height: 63px;
-                background: url('../../img/pc_ico_srch.png') no-repeat 50%;
-                background-size: 22px;
-                font-size: 0;
-                margin-top: 10px;
-                position: absolute;
-                top: 45px;
-                right: 40px;
+            }
+            @include mobile{
+                display: block;
+                right: 46px;
+                top: 4px;
+                width: 30px;
+                height: 31px;
             }
             &.active{
                 background-size: 18px;
@@ -286,6 +533,10 @@ button{
                         @include desktop{
                             width: calc(100% - 62px);
                         }
+                        @include mobile{
+                            width: calc(100% - 54px);
+                            height: 48px;
+                        }
                     }
                     button{
                         width: 62px;
@@ -294,6 +545,7 @@ button{
                         background-size: 22px;
                         font-size: 0;
                         float: right;
+                        @include mobile{width: 54px; height: 48px;}
                     }
                 }
             }
@@ -327,6 +579,21 @@ button{
                     }
                 }
             }
+            @include mobile{
+                display: none;
+                @include position(50%,102px);
+                padding: 40px 20px;
+                background-color: #fff;
+
+                .top_srch_area{
+                    margin: 0 auto;
+                    width: 100%;
+                    
+                    .srch_box{
+                        width: 100%;
+                    }
+                }
+            }
         }
     }   
     &.fixed{
@@ -353,12 +620,15 @@ button{
             .mb_srch_btn{
                 top: 0px;
                 @include m-tablet{right: 15px;}
+                @include mobile{right: 46px;
+                    top: 4px;}
             }
             .gnb_menu .depth2{
                 top: 87px;
             }
             form#keyword{
                 @include position(50%,87px);
+                @include mobile{top: 102px;}
             }
         }
         @include desktop{
@@ -467,15 +737,17 @@ button{
                             margin-right: 25px;
                             margin-bottom: 20px;
                             &:not(:first-child){
-                                margin-top: 0;
+                                margin-top: 0px;
                             }
                             &:nth-child(3n){
                                 margin-right: 0;
                             }
                         }
                         line-height: 1.5;
-                        &:not(:first-child){
-                            margin-top: 28px;
+                        @include mobile{
+                            &:not(:first-child){
+                                margin-top: 28px;
+                            }
                         }
 
                         img{
@@ -507,7 +779,7 @@ button{
                             background-size: 5px;
                             color: $gold;
                             @include desktop{
-                                position: absolute;
+                                // position: absolute;
                                 top: 7px;
                                 right: 0;
                                 padding-right: 12px;
@@ -709,8 +981,15 @@ button{
             padding: 145px 0 54px;
             background: url('../../img/pc_f_logo_wht.png') no-repeat 0 0;
             background-size: 88px;
-
+            @include mobile{
+                padding: 76px 0 0;
+                background-size: 62px;
+            }
             .right{
+                @include mobile{
+                    position: relative;
+                    margin-top: 20px;
+                }
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -729,9 +1008,18 @@ button{
                         &:last-child{
                             margin-top: 14px;
                         }
+                        @include mobile{
+                            line-height: 19px; 
+                            font-size: 13px;
+                            margin-top: 0;
+                            &:last-child{
+                                margin-top: 5px;
+                            }    
+                        }
                     }
                 }
                 ul{
+                    @include mobile{display: none;}
                     position: relative;
                     width: 202px;
                     padding: 0 27px;
@@ -756,12 +1044,16 @@ button{
                 li{
                     @include footerFont(15px);
                     line-height: 27px;
+                    @include mobile{line-height: 19px; font-size: 13px;}
                 }
             }
         }
     }
     .bottom{
         border-top: 1px $b-style $black;
+        @include mobile{
+            border-top: none;
+        }
 
         .wrap{
             position: relative;
@@ -770,14 +1062,23 @@ button{
             }
 
             .left{
+                @include mobile{
+                    margin: 30px 0 40px;
+                }
                 span{
                     display: block;
+                    margin-top: 15px;
                     position: relative;
                     @include desktop{
                         display: inline-block;
                         margin: 0 10px 0 0;
                         padding-right: 15px;
+                        
+                        > a{
+                            @include footerFont(13px);
+                        }
                     }
+                    
                     &:first-child a{color: $white;}
                     &::after{
                         @include prefix(1px, 12px){
@@ -785,17 +1086,24 @@ button{
                             top: 5px;
                             right: 0;
                         }
+                        @include mobile{
+                            content: none;
+                        }
                     }
                     &:last-child::after{
                         content: none;
                     }
                     a{
-                        @include footerFont(15px);
+                        @include footerFont(13px);
                         font-weight: 700;
                     }
                 }
             }
             .right{
+                @include mobile{
+                    position: relative;
+                    top: 0;
+                }
                 position: absolute;
                 right: 0;
                 top: 28px;
@@ -810,6 +1118,7 @@ button{
                     background: url('../../img/mb_ico_sel.png') no-repeat 100% 50%;
                     background-size: 34px;
                     font-size: 16px;
+                    @include mobile{width: 100%;}
                 }
                 ul{
                     &.on{
@@ -825,7 +1134,7 @@ button{
                     border: 1px $b-style $sub-black;
                     border-bottom: none;
                     padding: 10px 0;
-
+                    @include mobile{width: 100%;}
                     li{
                         button{
                             display: block;

@@ -45,7 +45,7 @@ button {
 }
 
 .pc_hidden {
-  display: none !important;
+  display: none;
 }
 
 .wrap {
@@ -71,9 +71,12 @@ button {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   background-color: #fff;
+}
+#header .pc_hidden {
+  display: none;
 }
 @media (min-width: 767px) {
   #header .wrap {
@@ -83,6 +86,11 @@ button {
 #header .top {
   border-bottom: 1px solid #dcdcdc;
 }
+@media (max-width: 766px) {
+  #header .top {
+    display: none;
+  }
+}
 #header .top .wrap {
   height: 45px;
   padding: 5px 60px;
@@ -91,7 +99,6 @@ button {
 }
 #header .top .wrap a.logo {
   display: inline-block;
-  padding-top: 5px;
 }
 #header .top .wrap .util_menu {
   position: absolute;
@@ -137,6 +144,28 @@ button {
 #header .bottom .wrap {
   padding: 0 60px;
 }
+@media (max-width: 766px) {
+  #header .bottom .wrap {
+    padding: 0;
+  }
+}
+#header .bottom .home {
+  display: none;
+}
+@media (max-width: 766px) {
+  #header .bottom .home {
+    display: block;
+    position: absolute;
+    width: 22px;
+    left: 20px;
+    top: 19px;
+    height: 22px;
+    background: url("../../img/mb_ico_home.png") no-repeat 50%;
+    background-size: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+}
 #header .bottom .nm_logo {
   display: inline-block;
   margin-right: 5%;
@@ -159,6 +188,214 @@ button {
     top: 20px;
   }
 }
+@media (max-width: 766px) {
+  #header .bottom .nm_logo {
+    display: block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #dcdcdc;
+  }
+}
+@media (max-width: 766px) {
+  #header .bottom .btn_gnb {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 23px;
+  }
+  #header .bottom .btn_gnb span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #333;
+    margin-top: 4px;
+  }
+  #header .bottom .btn_gnb span:first-child {
+    margin-top: 0;
+  }
+}
+@media (min-width: 767px) {
+  #header .bottom .mb_gnb {
+    display: none;
+  }
+}
+@media (max-width: 766px) {
+  #header .bottom .mb_gnb {
+    left: -100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 110;
+  }
+  #header .bottom .mb_gnb .wrap {
+    position: relative;
+    height: 100vh;
+    padding: 76px 20px 20px;
+    overflow-y: auto;
+  }
+  #header .bottom .mb_gnb .wrap .gnb_logo {
+    position: absolute;
+    top: 20px;
+    width: 190px;
+  }
+  #header .bottom .mb_gnb .wrap .gnb_logo img {
+    max-width: 100%;
+    border: 0;
+    vertical-align: top;
+  }
+  #header .bottom .mb_gnb .wrap .btn_close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    background: url("../../img/mb_ico_close.png") no-repeat 50%;
+    background-size: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+  #header .bottom .mb_gnb .wrap .g_top p {
+    font-size: 21px;
+    font-weight: 500;
+  }
+  #header .bottom .mb_gnb .wrap .g_top .btn_area {
+    margin-top: 30px;
+    text-align: center;
+  }
+  #header .bottom .mb_gnb .wrap .g_top .btn_area::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  #header .bottom .mb_gnb .wrap .g_top .btn_area .btn_txt {
+    float: left;
+    display: block;
+    width: 49%;
+    height: 50px;
+    line-height: 46px;
+    font-size: 13px;
+    margin-right: 2%;
+    background-color: #998465;
+    color: #fff;
+  }
+  #header .bottom .mb_gnb .wrap .g_top .btn_area .btn_txt.btn_dgray {
+    background: #333;
+    border: 2px solid #333;
+  }
+  #header .bottom .mb_gnb .wrap .g_top .btn_area .btn_txt:last-of-type {
+    margin-right: 0;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu {
+    margin: 20px -20px 0;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li > .btn_tg, #header .bottom .mb_gnb .wrap .g_menu > li a {
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 15px;
+    text-align: left;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li > .btn_tg span, #header .bottom .mb_gnb .wrap .g_menu > li a span {
+    display: block;
+    position: relative;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li > .btn_tg span::after, #header .bottom .mb_gnb .wrap .g_menu > li a span::after {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: url("../../img/ico_btn_arrow_gray_down.png") no-repeat 50%;
+    margin-top: -4px;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li .depth2 {
+    display: none;
+    padding: 20px 0;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li .depth2 > li {
+    padding: 0 20px;
+    color: #666;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li .depth2 .depth3 {
+    display: none;
+    padding: 5px 0 0 10px;
+  }
+  #header .bottom .mb_gnb .wrap .g_menu > li .depth2 .depth3 > li {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  #header .bottom .mb_gnb .wrap .b_menu {
+    margin: 0 -20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  #header .bottom .mb_gnb .wrap .b_menu ul {
+    display: table;
+    width: 100%;
+  }
+  #header .bottom .mb_gnb .wrap .b_menu ul li {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+    text-align: center;
+  }
+  #header .bottom .mb_gnb .wrap .b_menu ul li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    background: #dcdcdc;
+  }
+  #header .bottom .mb_gnb .wrap .b_menu ul li:last-of-type::after {
+    content: none;
+  }
+  #header .bottom .mb_gnb .wrap .contact {
+    padding-top: 25px;
+  }
+  #header .bottom .mb_gnb .wrap .contact p {
+    font-size: 13px;
+    color: #666;
+  }
+  #header .bottom .mb_gnb .wrap .contact p a {
+    color: #998465;
+  }
+  #header .bottom .mb_gnb .wrap .contact p:last-of-type {
+    margin-top: 5px;
+  }
+  #header .bottom .mb_gnb .wrap .contact p.tit {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  #header .bottom .mb_gnb .wrap .contact .btn_txt.btn_beige {
+    margin-top: 18px;
+    background: #998465;
+    border: 2px solid #998465;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 46px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
 #header .bottom .gnb_menu {
   display: inline-block;
   vertical-align: middle;
@@ -173,6 +410,12 @@ button {
     margin: 0 -12px;
   }
 }
+@media (max-width: 766px) {
+  #header .bottom .gnb_menu > ul {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
 #header .bottom .gnb_menu > ul > li {
   display: inline-block;
   vertical-align: top;
@@ -181,6 +424,17 @@ button {
 }
 #header .bottom .gnb_menu > ul > li a {
   font-size: 18px;
+}
+@media (max-width: 766px) {
+  #header .bottom .gnb_menu > ul > li {
+    margin: 0 14px;
+    padding: 0;
+  }
+  #header .bottom .gnb_menu > ul > li a {
+    display: block;
+    font-size: 15px;
+    padding: 10px 0;
+  }
 }
 #header .bottom .gnb_menu > ul > li .depth2 {
   display: none;
@@ -258,6 +512,26 @@ button {
 #header .bottom .gnb_menu > ul > li:hover .depth3 a:hover {
   color: #998465;
 }
+@media (max-width: 766px) {
+  #header .bottom .gnb_menu > ul > li:hover > a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #header .bottom .gnb_menu > ul > li:hover .depth2, #header .bottom .gnb_menu > ul > li:hover .depth3 {
+    display: none;
+  }
+}
+#header .bottom .mb_srch_btn {
+  width: 62px;
+  height: 63px;
+  background: url("../../img/pc_ico_srch.png") no-repeat 50%;
+  background-size: 22px;
+  font-size: 0;
+  margin-top: 10px;
+  position: absolute;
+  top: 45px;
+  right: 40px;
+}
 @media (min-width: 767px) {
   #header .bottom .mb_srch_btn {
     display: none;
@@ -266,29 +540,20 @@ button {
 @media (min-width: 1060px) and (max-width: 1400px) {
   #header .bottom .mb_srch_btn {
     display: block;
-    width: 62px;
-    height: 63px;
-    background: url("../../img/pc_ico_srch.png") no-repeat 50%;
-    background-size: 22px;
-    font-size: 0;
-    margin-top: 10px;
-    position: absolute;
-    top: 45px;
-    right: 40px;
   }
 }
 @media (min-width: 767px) and (max-width: 1059px) {
   #header .bottom .mb_srch_btn {
     display: block;
-    width: 62px;
-    height: 63px;
-    background: url("../../img/pc_ico_srch.png") no-repeat 50%;
-    background-size: 22px;
-    font-size: 0;
-    margin-top: 10px;
-    position: absolute;
-    top: 45px;
-    right: 40px;
+  }
+}
+@media (max-width: 766px) {
+  #header .bottom .mb_srch_btn {
+    display: block;
+    right: 46px;
+    top: 4px;
+    width: 30px;
+    height: 31px;
   }
 }
 #header .bottom .mb_srch_btn.active {
@@ -319,6 +584,12 @@ button {
     width: calc(100% - 62px);
   }
 }
+@media (max-width: 766px) {
+  #header .bottom form#keyword .top_srch_area .srch_box input[type=text] {
+    width: calc(100% - 54px);
+    height: 48px;
+  }
+}
 #header .bottom form#keyword .top_srch_area .srch_box button {
   width: 62px;
   height: 38px;
@@ -326,6 +597,12 @@ button {
   background-size: 22px;
   font-size: 0;
   float: right;
+}
+@media (max-width: 766px) {
+  #header .bottom form#keyword .top_srch_area .srch_box button {
+    width: 54px;
+    height: 48px;
+  }
 }
 @media (min-width: 1060px) and (max-width: 1400px) {
   #header .bottom form#keyword {
@@ -363,6 +640,25 @@ button {
   }
   #header .bottom form#keyword .top_srch_area .srch_box {
     width: 500px;
+  }
+}
+@media (max-width: 766px) {
+  #header .bottom form#keyword {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 102px;
+    transform: translateX(-50%);
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  #header .bottom form#keyword .top_srch_area {
+    margin: 0 auto;
+    width: 100%;
+  }
+  #header .bottom form#keyword .top_srch_area .srch_box {
+    width: 100%;
   }
 }
 #header.fixed .top {
@@ -396,6 +692,12 @@ button {
     right: 15px;
   }
 }
+@media (max-width: 766px) {
+  #header.fixed .bottom .mb_srch_btn {
+    right: 46px;
+    top: 4px;
+  }
+}
 #header.fixed .bottom .gnb_menu .depth2 {
   top: 87px;
 }
@@ -405,6 +707,11 @@ button {
   left: 50%;
   top: 87px;
   transform: translateX(-50%);
+}
+@media (max-width: 766px) {
+  #header.fixed .bottom form#keyword {
+    top: 102px;
+  }
 }
 @media (min-width: 767px) {
   #header.fixed .bottom form#keyword {
@@ -509,14 +816,16 @@ button {
     margin-bottom: 20px;
   }
   #contents .content .best_prd .wrap ul li:not(:first-child) {
-    margin-top: 0;
+    margin-top: 0px;
   }
   #contents .content .best_prd .wrap ul li:nth-child(3n) {
     margin-right: 0;
   }
 }
-#contents .content .best_prd .wrap ul li:not(:first-child) {
-  margin-top: 28px;
+@media (max-width: 766px) {
+  #contents .content .best_prd .wrap ul li:not(:first-child) {
+    margin-top: 28px;
+  }
 }
 #contents .content .best_prd .wrap ul li img {
   width: 100%;
@@ -555,7 +864,6 @@ button {
 }
 @media (min-width: 767px) {
   #contents .content .best_prd .wrap ul li .ico_arrow.beige {
-    position: absolute;
     top: 7px;
     right: 0;
     padding-right: 12px;
@@ -782,11 +1090,23 @@ button {
   background: url("../../img/pc_f_logo_wht.png") no-repeat 0 0;
   background-size: 88px;
 }
+@media (max-width: 766px) {
+  #footer .top .wrap {
+    padding: 76px 0 0;
+    background-size: 62px;
+  }
+}
 #footer .top .wrap .right {
   position: absolute;
   right: 0;
   top: 0;
   display: flex;
+}
+@media (max-width: 766px) {
+  #footer .top .wrap .right {
+    position: relative;
+    margin-top: 20px;
+  }
 }
 #footer .top .wrap .right p {
   padding-right: 27px;
@@ -805,10 +1125,25 @@ button {
 #footer .top .wrap .right p span:last-child {
   margin-top: 14px;
 }
+@media (max-width: 766px) {
+  #footer .top .wrap .right p span {
+    line-height: 19px;
+    font-size: 13px;
+    margin-top: 0;
+  }
+  #footer .top .wrap .right p span:last-child {
+    margin-top: 5px;
+  }
+}
 #footer .top .wrap .right ul {
   position: relative;
   width: 202px;
   padding: 0 27px;
+}
+@media (max-width: 766px) {
+  #footer .top .wrap .right ul {
+    display: none;
+  }
 }
 #footer .top .wrap .right ul:last-child {
   padding-right: 0;
@@ -836,8 +1171,19 @@ button {
   font-family: "Noto Sans KR", sans-serif;
   line-height: 27px;
 }
+@media (max-width: 766px) {
+  #footer .top .wrap > ul li {
+    line-height: 19px;
+    font-size: 13px;
+  }
+}
 #footer .bottom {
   border-top: 1px solid #333;
+}
+@media (max-width: 766px) {
+  #footer .bottom {
+    border-top: none;
+  }
 }
 #footer .bottom .wrap {
   position: relative;
@@ -847,8 +1193,14 @@ button {
     padding: 36px 0;
   }
 }
+@media (max-width: 766px) {
+  #footer .bottom .wrap .left {
+    margin: 30px 0 40px;
+  }
+}
 #footer .bottom .wrap .left span {
   display: block;
+  margin-top: 15px;
   position: relative;
 }
 @media (min-width: 767px) {
@@ -856,6 +1208,11 @@ button {
     display: inline-block;
     margin: 0 10px 0 0;
     padding-right: 15px;
+  }
+  #footer .bottom .wrap .left span > a {
+    color: #999;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
   }
 }
 #footer .bottom .wrap .left span:first-child a {
@@ -871,12 +1228,17 @@ button {
   top: 5px;
   right: 0;
 }
+@media (max-width: 766px) {
+  #footer .bottom .wrap .left span::after {
+    content: none;
+  }
+}
 #footer .bottom .wrap .left span:last-child::after {
   content: none;
 }
 #footer .bottom .wrap .left span a {
   color: #999;
-  font-size: 15px;
+  font-size: 13px;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 700;
 }
@@ -884,6 +1246,12 @@ button {
   position: absolute;
   right: 0;
   top: 28px;
+}
+@media (max-width: 766px) {
+  #footer .bottom .wrap .right {
+    position: relative;
+    top: 0;
+  }
 }
 #footer .bottom .wrap .right > button {
   border: 1px solid #666;
@@ -896,6 +1264,11 @@ button {
   background: url("../../img/mb_ico_sel.png") no-repeat 100% 50%;
   background-size: 34px;
   font-size: 16px;
+}
+@media (max-width: 766px) {
+  #footer .bottom .wrap .right > button {
+    width: 100%;
+  }
 }
 #footer .bottom .wrap .right ul {
   display: none;
@@ -911,6 +1284,11 @@ button {
 }
 #footer .bottom .wrap .right ul.on {
   display: block;
+}
+@media (max-width: 766px) {
+  #footer .bottom .wrap .right ul {
+    width: 100%;
+  }
 }
 #footer .bottom .wrap .right ul li button {
   display: block;
